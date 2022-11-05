@@ -1,0 +1,14 @@
+C:\order\LiveCode\LiveCode\bin\Debug\netcoreapp3.1\LiveCode.exe
+C:\order\LiveCode\LiveCode\bin\Debug\netcoreapp3.1\LiveCode.deps.json
+C:\order\LiveCode\LiveCode\bin\Debug\netcoreapp3.1\LiveCode.runtimeconfig.json
+C:\order\LiveCode\LiveCode\bin\Debug\netcoreapp3.1\LiveCode.runtimeconfig.dev.json
+C:\order\LiveCode\LiveCode\bin\Debug\netcoreapp3.1\LiveCode.dll
+C:\order\LiveCode\LiveCode\bin\Debug\netcoreapp3.1\LiveCode.pdb
+C:\order\LiveCode\LiveCode\obj\Debug\netcoreapp3.1\LiveCode.csproj.AssemblyReference.cache
+C:\order\LiveCode\LiveCode\obj\Debug\netcoreapp3.1\LiveCode.GeneratedMSBuildEditorConfig.editorconfig
+C:\order\LiveCode\LiveCode\obj\Debug\netcoreapp3.1\LiveCode.AssemblyInfoInputs.cache
+C:\order\LiveCode\LiveCode\obj\Debug\netcoreapp3.1\LiveCode.AssemblyInfo.cs
+C:\order\LiveCode\LiveCode\obj\Debug\netcoreapp3.1\LiveCode.csproj.CoreCompileInputs.cache
+C:\order\LiveCode\LiveCode\obj\Debug\netcoreapp3.1\LiveCode.dll
+C:\order\LiveCode\LiveCode\obj\Debug\netcoreapp3.1\LiveCode.pdb
+C:\order\LiveCode\LiveCode\obj\Debug\netcoreapp3.1\LiveCode.genruntimeconfig.cache
