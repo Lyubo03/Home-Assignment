@@ -1,6 +1,8 @@
 ﻿namespace LiveCode
 {
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
 
     internal class Node<T>
     {
@@ -31,16 +33,14 @@
         public void AddPrevious(Node<T> node)
             => previous = node;
 
-        public Node<T> Traverse()
+        public void Traverse()
         {
             var currentNode = this;
             while (currentNode.Next != null)
             {
-                Console.WriteLine(currentNode.Data);
+                Console.WriteLine(currentNode);
                 currentNode = currentNode.Next;
             }
-
-            return currentNode;
         }
 
         public Node<T> Traverse(int iterations)
@@ -77,17 +77,19 @@
         {
             var currentNode = this;
 
-            while (currentNode.Next != null)
+            while (true)
             {
                 if (data.Equals(currentNode.Data))
+                {
+                    return currentNode;
+                }
+                else if (currentNode.Next == null)
                 {
                     return currentNode;
                 }
 
                 currentNode = currentNode.Next;
             }
-
-            return null;
         }
 
         public override string ToString()

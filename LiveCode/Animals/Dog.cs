@@ -2,22 +2,17 @@
 {
     using System.Collections.Generic;
 
-    internal class Dog : Animal
+    public class Dog : Animal
     {
-        private const int points = 10;
-
-        public Dog() : base(points)
+        private const int caloriesToBurnWhilePlaying = 20;
+        public Dog(string name, List<string> diet) 
+            : base(name, diet)
         {
-
         }
 
-        protected override void Diet()
+        public override void Play()
         {
-            Foods.AddRange(new List<string>()
-            {
-                "Meat",
-                "Bones"
-            });
+            this.HitPoints -= caloriesToBurnWhilePlaying;
         }
     }
 }

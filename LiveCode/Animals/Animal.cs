@@ -1,46 +1,88 @@
 ﻿namespace LiveCode.Animals
 {
+    using System;
+    using System.Linq;
     using System.Collections.Generic;
 
-    internal abstract class Animal
+    public abstract class Animal
     {
+        private string name;
         private int hitPoints;
-        private List<Food> foods;
+        private const int maxHealth = 100;
+        private List<string> diet;
+        private const int caloriesToHealth = 10;
 
-        public Animal(int hitPoints)
+        public Animal(string name, List<string> diet)
         {
-            this.hitPoints = hitPoints;
-            foods = new List<Food>();
+            Name = name;
+            HitPoints = maxHealth;
+            Diet = diet;
         }
 
-        public List<Food> Foods
-        {
-            get => foods;
-            set
+        public string Name
+        { 
+            get => name;
+            protected set
             {
-                foods = value;
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("The name cannot be null or empty!");
+                }
+                this.name = value;
             }
         }
-        protected int HitPoints
+
+        public List<string> Diet
         {
-            get => HitPoints;
-            set
+            get => diet;
+            private set
             {
+                if (!value.Any())
+                {
+                    throw new ArgumentException("There should be at least somthing edible!");
+                }
+                diet = value;
+            }
+        }
+        public int HitPoints
+        {
+            get => hitPoints;
+            protected set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Health should be greater than zero!");
+                }
                 hitPoints = value;
             }
         }
 
         public void Feed(Food food)
         {
-            if (foods.Contains(food))
+            if (hitPoints == maxHealth)
             {
-                hitPoints += 1;
+                Console.WriteLine("I am not hungry at this moment");
+                return;
+            }
+            else if (food == null)
+            {
+                throw new ArgumentException("I cannot eat nothing!");
+            }
+            else if (diet.Contains(food.Name))
+            {
+                hitPoints += food.Calories / caloriesToHealth;
+                Console.WriteLine("Mmm.. Delicous!!!");
             }
             else
             {
-                hitPoints -= 1;
+                hitPoints -= food.Calories / caloriesToHealth;
+                Console.WriteLine("This food is poisonous!");
             }
         }
-        protected abstract void Diet();
+
+        public abstract void Play();
+
+        public override string ToString()
+             => $"Name: {this.Name}{Environment.NewLine}Hit Points: {HitPoints}{Environment.NewLine}";
     }
 }
